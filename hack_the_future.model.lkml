@@ -9,3 +9,5 @@ datagroup: hack_the_future_default_datagroup {
 }
 
 persist_with: hack_the_future_default_datagroup
+
+explore: cbs_leerling_kenmerken_mv {}
