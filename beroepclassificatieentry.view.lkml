@@ -31,7 +31,8 @@ view: beroepclassificatieentry {
     hidden: yes
   }
 
-  dimension: omschrijving {
+  dimension: bce_omschrijving {
+    label: "Omschrijving"
     type: string
     sql: ${TABLE}.OMSCHRIJVING ;;
   }

@@ -7,7 +7,8 @@ view: beroepclassificatie {
     hidden: yes
   }
 
-  dimension: omschrijving {
+  dimension: bc_omschrijving {
+    label: "Omschrijving"
     type: string
     sql: ${TABLE}.OMSCHRIJVING ;;
   }
