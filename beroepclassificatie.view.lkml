@@ -32,6 +32,12 @@ view: beroepclassificatie {
     hidden: yes
   }
 
+  dimension: bc_status_code {
+    type: string
+    sql: ${TABLE}.STATUS_CD ;;
+    hidden: yes
+  }
+
   measure: bc_aantal {
     label: "Aantal"
     type: count
@@ -44,6 +50,4 @@ view: beroepclassificatie {
 #  IND_ENTRIES      CHAR(1 BYTE)                 NOT NULL,
 #  IND_VOLLEDIG     CHAR(1 BYTE)                 NOT NULL,
 #  IND_DUBBEL       CHAR(1 BYTE)                 NOT NULL,
-#  STATUS_CD        CHAR(1 BYTE),
-#  VER_EXISTS       CHAR(1 BYTE),
 #  MAX_ENTRIES_BRP  NUMBER(4)

@@ -18,13 +18,25 @@ explore: beroep {
   }
   join: beroepclassificatie {
     type: left_outer
-    sql_on: ${beroepclassificatie.bclass_cd} = ${beroepindeling.bclass_cd} ;;
+    sql_on: ${beroepclassificatie.bclass_cd} = ${beroepindeling.bclass_cd}
+        and ${beroepclassificatie.bc_status_code} = 'A';;
     relationship: many_to_one
   }
   join: beroepclassificatieentry {
     type: left_outer
     sql_on: ${beroepclassificatieentry.bclass_cd} = ${beroepclassificatie.bclass_cd}
-        and ${beroepclassificatieentry.bcle_cd} = ${beroepindeling.bcle_cd} ;;
+        and ${beroepclassificatieentry.bcle_cd} = ${beroepindeling.bcle_cd}
+        and ${beroepclassificatieentry.bce_status_cd} = 'A';;
+    relationship: many_to_many
+  }
+  join: beroep_opleiding {
+    type: inner
+    sql_on: ${beroep_opleiding.beroep_cd} = ${beroep.beroep_cd} ;;
+    relationship: one_to_many
+  }
+  join: opleiding_alg {
+    type: inner
+    sql_on: ${opleiding_alg.opleiding_cd} = ${beroep_opleiding.opleiding_cd} ;;
     relationship: many_to_many
   }
 }

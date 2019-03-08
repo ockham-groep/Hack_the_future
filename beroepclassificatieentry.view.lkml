@@ -55,7 +55,7 @@ view: beroepclassificatieentry {
     hidden: yes
   }
 
-  dimension: status_cd {
+  dimension: bce_status_cd {
     type: string
     sql: ${TABLE}.STATUS_CD ;;
     hidden: yes

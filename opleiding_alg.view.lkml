@@ -4,6 +4,7 @@ view: opleiding_alg {
   dimension: opleiding_cd {
     type: number
     sql: ${TABLE}.OPLEIDING_CD ;;
+    primary_key: yes
   }
 
   dimension: opleidingsnaam {

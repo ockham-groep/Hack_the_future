@@ -4,6 +4,7 @@ view: beroep {
   dimension: beroep_cd {
     type: number
     sql: ${TABLE}.BEROEP_CD ;;
+    primary_key: yes
   }
 
   dimension: omschrijving_l {
