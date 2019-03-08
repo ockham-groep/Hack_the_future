@@ -1,6 +1,12 @@
 view: beroepclassificatieentry {
   sql_table_name: DMD.BEROEPCLASSIFICATIEENTRY ;;
 
+  dimension: bcle_pk {
+    type: string
+    sql: ${TABLE}.BCLASS_CD || ${TABLE}.BCLE_CD ;;
+    primary_key: yes
+  }
+
   dimension: bclass_cd {
     type: string
     sql: ${TABLE}.BCLASS_CD ;;
@@ -52,15 +58,18 @@ view: beroepclassificatieentry {
   dimension: status_cd {
     type: string
     sql: ${TABLE}.STATUS_CD ;;
+    hidden: yes
   }
 
   dimension: ver_exists {
     type: string
     sql: ${TABLE}.VER_EXISTS ;;
+    hidden: yes
   }
 
-  measure: count {
+  measure: bce_aantal {
+    label: "Aantal"
     type: count
-    drill_fields: []
+    drill_fields: [bcle_id, bce_omschrijving]
   }
 }

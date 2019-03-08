@@ -5,6 +5,7 @@ view: beroepclassificatie {
     type: string
     sql: ${TABLE}.BCLASS_CD ;;
     hidden: yes
+    primary_key: yes
   }
 
   dimension: bc_omschrijving {
@@ -31,7 +32,8 @@ view: beroepclassificatie {
     hidden: yes
   }
 
-  measure: aantal_beroepclassificaties {
+  measure: bc_aantal {
+    label: "Aantal"
     type: count
     drill_fields: []
   }
