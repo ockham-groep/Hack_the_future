@@ -29,6 +29,16 @@ explore: beroep {
         and ${beroepclassificatieentry.bce_status_cd} = 'A';;
     relationship: many_to_many
   }
+  join: bclass_cd_89_21eeuw {
+    type: left_outer
+    sql_on: ${bclass_cd_89_21eeuw.bcle_cd} = ${beroepclassificatieentry.bcle_cd} ;;
+    relationship: one_to_one
+  }
+  join: 21e_eeuwse_competenties {
+    type: left_outer
+    sql_on: ${21e_eeuwse_competenties.omschrijving} = ${bclass_cd_89_21eeuw.omschrijving_n} ;;
+    relationship: many_to_one
+  }
   join: beroep_opleiding {
     type: inner
     sql_on: ${beroep_opleiding.beroep_cd} = ${beroep.beroep_cd} ;;

@@ -5,6 +5,7 @@ view: beroepclassificatieentry {
     type: string
     sql: ${TABLE}.BCLASS_CD || ${TABLE}.BCLE_CD ;;
     primary_key: yes
+    hidden:  yes
   }
 
   dimension: bclass_cd {

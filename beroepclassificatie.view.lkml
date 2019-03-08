@@ -4,7 +4,7 @@ view: beroepclassificatie {
   dimension: bclass_cd {
     type: string
     sql: ${TABLE}.BCLASS_CD ;;
-    hidden: yes
+    hidden: no
     primary_key: yes
   }
 
